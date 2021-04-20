@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
 </head>
 <body>
-    Hola
+    Hola, Mi IP es: <strong id="ipId"></strong>
     <script>
         if ( navigator.geolocation ) {
             alert("Si, está soportado.");
@@ -23,5 +23,11 @@
             alert("No, no está soportado.");
         }
     </script>
+    <script type="text/javascript">
+        function get_ip(obj){
+            document.getElementById('ipId').innerHTML = obj.ip;
+        }
+    </script>
+    <script type="text/javascript" src="https://api.ipify.org/?format=jsonp&callback=get_ip"></script>
 </body>
 </html>
