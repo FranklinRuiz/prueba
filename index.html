@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo HTML5</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    Hola
+    <script>
+        if ( navigator.geolocation ) {
+            alert("Si, está soportado.");
+            navigator.geolocation.getCurrentPosition(
+                function( datos ) {
+                    alert( "Latitud: " + datos.coords.latitude + " - Longitud: " + datos.coords.longitude) 
+                },
+
+                function() {
+                    alert( "Algo fue mal.")
+                }
+            )
+        }
+        else {
+            alert("No, no está soportado.");
+        }
+    </script>
+</body>
+</html>
