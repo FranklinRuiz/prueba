@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo61" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="b532efdf-e133-4ace-85c4-ec43bc4c906d">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tabla-ag" uuid="d28856f1-48d5-4ed6-9020-dc9db9e18aaf">
+		<queryString language="SQL">
+			<![CDATA[declare @mensaje varchar(200),@cod smallint
+exec [UPS].[obtenerAutorizacionGasto] @P_ID_AUTORIZACION_GASTO =231,@COD_RESULTADO = @cod out,@MSG_RESULTADO = @mensaje out]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Table Dataset 1" uuid="940226ad-77c3-4340-87dc-bf5a15411ee3"/>
+	<subDataset name="New Dataset 1" uuid="94164296-79e0-4e0f-ad7b-7682db103b6f">
+		<queryString language="SQL">
+			<![CDATA[declare @mensaje varchar(200),@cod smallint
+exec [UPS].[obtenerAutorizacionGasto] @P_ID_AUTORIZACION_GASTO =231 ,@COD_RESULTADO = @cod out,@MSG_RESULTADO = @mensaje out]]>
+		</queryString>
+		<field name="NUMERO" class="java.lang.Long"/>
+		<field name="INSUMO" class="java.lang.String"/>
+		<field name="UNIDAD" class="java.lang.String"/>
+		<field name="PRECIO_UNITARIO" class="java.math.BigDecimal"/>
+		<field name="IMPORTE" class="java.math.BigDecimal"/>
+		<field name="RAZON_SOCIAL" class="java.lang.String"/>
+		<field name="FORMA_PAGO" class="java.lang.String"/>
+		<field name="CHEQUE" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="id_autorizacion_gasto" class="java.lang.Long"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\pais\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[exec [UPS].[obtenerAutorizacionGasto] $P{id_autorizacion_gasto}]]>
+	</queryString>
+	<field name="PROYECTO_ID" class="java.lang.Long"/>
+	<field name="AUTORIZACION_CODIGO" class="java.lang.String"/>
+	<field name="AUTORIZACION_GASTO_ID" class="java.lang.Long"/>
+	<field name="CONVENIO_CODIGO" class="java.lang.String"/>
+	<field name="CONVENIO_MONTO" class="java.math.BigDecimal"/>
+	<field name="ANTERIORES_ACUMULADO" class="java.math.BigDecimal"/>
+	<field name="SALDO_DISPONIBLE" class="java.math.BigDecimal"/>
+	<field name="AUTORIZACION_MONTO" class="java.math.BigDecimal"/>
+	<field name="DNI_PRESIDENTE" class="java.lang.String"/>
+	<field name="PRESIDENTE" class="java.lang.String"/>
+	<field name="DNI_TESORERO" class="java.lang.String"/>
+	<field name="TESORERO" class="java.lang.String"/>
+	<field name="DNI_SECRETARIO" class="java.lang.String"/>
+	<field name="SECRETARIO" class="java.lang.String"/>
+	<field name="DNI_FISCAL" class="java.lang.String"/>
+	<field name="FISCAL" class="java.lang.String"/>
+	<field name="DNI_SUPERVISOR" class="java.lang.String"/>
+	<field name="SUPERVISOR" class="java.lang.String"/>
+	<field name="DNI_RESIDENTE" class="java.lang.String"/>
+	<field name="RESIDENTE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="20" uuid="4e47e8b5-c880-4ea6-9527-4d9c89c56372"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANEXO N° 06]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="19" width="801" height="20" uuid="132a3f60-6359-459b-837d-ab2ba555b0bb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AUTORIZACIÓN DE GASTOS N°  "+$F{AUTORIZACION_CODIGO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="425" y="4" width="120" height="13" uuid="fe4015a1-78ca-4e68-9b73-000741cfbaec"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="42" width="100" height="13" uuid="26a7ed25-b0e9-4181-9c86-bb67ace4b9b5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ANTERIORES_ACUMULADO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="167" height="13" uuid="0c6e3f82-2514-4cb3-8e68-16eada27dfe8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[N° CONVENIO COOPERACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="22" width="167" height="15" uuid="7944d7e9-6c81-40f7-a49f-a902d2c4d10f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MONTO DE CONVENIO S/.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="544" y="22" width="257" height="15" uuid="c699dd57-9794-4faa-8495-b0743b7d719d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SALDO_DISPONIBLE}+"  ANTES DE LA PRESENTE AUTORIZACIÓN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="544" y="4" width="100" height="13" uuid="0b7683dd-cdd1-4b18-ac30-008a1649be46"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="22" width="100" height="15" uuid="07661b9d-b286-4baf-a095-80f4ce34a7ab"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CONVENIO_MONTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="4" width="100" height="13" uuid="77a5214d-b701-4fa7-9602-08965d376df4"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CONVENIO_CODIGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="425" y="22" width="120" height="15" uuid="923375ea-f817-47b9-9c84-c4a27342e39f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[SALDO DISPONIBLE S/.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="301" height="13" uuid="c5870cfa-bf9b-4542-b532-097825d84b44"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MONTO ACUMULADO DE AUTORIZACIONES ANTERIORES S/.:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="801" height="20" uuid="b518aff5-e8e8-4089-8e2e-ff9cb83cef06"/>
+				<subreportParameter name="id_autorizacion_gasto">
+					<subreportParameterExpression><![CDATA[$P{id_autorizacion_gasto}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "anexo61_subreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="231" splitType="Stretch">
+			<line>
+				<reportElement x="331" y="133" width="134" height="1" uuid="67c07341-35c1-469b-8e44-7c4fe84d35de"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="331" y="48" width="134" height="13" uuid="555d2af9-50df-48b5-96ef-2325632db9e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TESORERO N.E.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="583" y="146" width="134" height="13" uuid="0b7c4343-bbd7-426a-907f-3adf9f57f312"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SUPERVISOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="133" width="134" height="13" uuid="51a94834-6d2c-434c-b10b-69b88cedb17e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RESIDENTE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="331" y="48" width="134" height="1" uuid="4d9ae69a-7f5a-4ec2-8486-3df1ebbc4399"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="583" y="48" width="134" height="26" uuid="af053eb7-c63d-4a7f-95a6-1cdf9e834cb9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SECRETARIO N.E. (Opcional)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="74" y="48" width="134" height="13" uuid="3f0a24bd-c286-4a13-a9cb-1af42d3a3f43"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PRESIDENTE N.E.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="583" y="48" width="134" height="1" uuid="5948a964-1437-4719-b79b-82b192e3281a"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="331" y="173" width="134" height="13" uuid="a3d263e7-de71-44b2-8a92-3af76e781780"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Sello y firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="74" y="48" width="134" height="1" uuid="8547b4cf-cc87-4095-ab55-b4c2e6e541e0"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="74" y="133" width="134" height="1" uuid="3a746ab9-151e-4ae0-8c2d-676954fe1f54"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="583" y="133" width="134" height="1" uuid="a0904930-c8dc-4f62-88a1-9cf5bc03ce28"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="74" y="133" width="134" height="13" uuid="b22a07af-2039-4968-a23a-229092ce900d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[FISCAL N.E. (Opcional)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="583" y="133" width="134" height="13" uuid="933483eb-0c7f-461e-aaa3-78e4a1492cfd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Aprobado por:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="74" y="74" width="134" height="15" uuid="208b2483-1fd5-4a5d-b5b7-7f4217420f66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["DNI: "+$F{DNI_PRESIDENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="61" width="134" height="15" uuid="82e48a23-e6d9-4033-b092-b8971ba8284a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRESIDENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="60" width="134" height="15" uuid="6a387bd9-5efc-442b-a6ca-b08eec80c2ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TESORERO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="73" width="134" height="15" uuid="772a9394-bb50-4ef1-b301-389502d23326"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SECRETARIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="145" width="134" height="14" uuid="98b4bc07-f2d0-45d9-8d1c-7d1b601f26be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FISCAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="158" width="134" height="15" uuid="f507960b-8808-4384-a0d1-b868ba3c475d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["DNI: "+$F{DNI_FISCAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="145" width="134" height="15" uuid="f19fdd81-2785-439b-9b53-c2c8c3292318"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{RESIDENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="159" width="134" height="15" uuid="11df13b4-df0b-4045-9251-fad1aeadedb4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["DNI: "+$F{DNI_RESIDENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="159" width="134" height="13" uuid="1ea2b096-6dc9-46e3-a039-5118a6f72827"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SUPERVISOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="171" width="134" height="13" uuid="ff364ad6-cc09-4d66-9232-e6bc429bd33f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["DNI: "+$F{DNI_SUPERVISOR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="200" width="643" height="11" uuid="f5fcd8b2-4828-402f-b4a6-71fec7b07d06"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[EL Tesorero(a) y Residente son responsables de presentar los comprobantes de pago, asi como del monto autorizado para contratación de servicios, que sustentaran con la documentación respectiva.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="210" width="381" height="21" uuid="242f38cb-0c6e-4cf7-959b-b1445b348379"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Los montos indicados en la Autorización de Gasto, deberán ser compatibles con las cotizaciones previamente realizadas.
+El supervisor es responsable por la revisión, evaluación y conformidad de la presente Autorización de Gasto]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

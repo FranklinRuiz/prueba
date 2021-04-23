@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo6a" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="d085f48b-6a3a-4f94-a4ec-bac8710879b0">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_autorizacion_gasto" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\pais\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[exec [UPS].[obtenerAutorizacionGastoCuadroControl] $P{id_autorizacion_gasto}]]>
+	</queryString>
+	<field name="PROYECTO_ID" class="java.lang.Long"/>
+	<field name="CONVENIO_CODIGO" class="java.lang.String"/>
+	<field name="FECHA_ELABORACION" class="java.lang.String"/>
+	<field name="SUPERVISOR" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="15" width="802" height="20" backcolor="#999999" uuid="27339165-d499-48b1-b08f-56978b4b7834"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUADRO DE CONTROL DE AUTORIZACIONES PARA ADQUISICIONES DE INSUMOS (*)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="16" uuid="4dbf0990-83a4-437e-a662-36fbcd45304a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANEXO N° 06-A]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="63" height="20" uuid="5c4218f3-1f28-4fe4-8b6d-575dcd004f44"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROYECTO :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="76" height="20" uuid="06619df6-d76d-4986-a41c-fca353836de3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONVENIO N° :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="44" width="137" height="20" uuid="bdbefdb6-75df-4ba4-9b46-a440dd93ba66"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE ELEBORACIÓN :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="6" width="100" height="20" uuid="50fde9f6-880f-410f-9fe9-692396641cfb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PROYECTO_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="25" width="100" height="20" uuid="4f3ed382-3c3e-4e5b-9dcf-267f5f18c754"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CONVENIO_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="44" width="100" height="20" uuid="6bc5b8c3-a1a8-4018-8485-cc1ca640addd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FECHA_ELABORACION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="19" uuid="2f234e72-6a58-4c75-9bec-c221837fb5b2"/>
+				<subreportParameter name="id_autorizacion_gasto">
+					<subreportParameterExpression><![CDATA[$P{id_autorizacion_gasto}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "anexo6a_subreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="178" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="2" width="258" height="12" uuid="d3d13b8f-4b81-4247-b145-4339becd4b1d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(*)        Este formato contiene como anexo los siguientes cuadros :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="15" width="153" height="12" uuid="541a1cc7-8e0e-4743-b641-32d1f62edaec"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[06-A1: Desagregado de Fierros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="28" width="152" height="12" uuid="451ec14d-10fb-454c-8606-092288cc1e65"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[06-A2: Desagregado de Madera]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="41" width="152" height="12" uuid="b7bba7ea-8e4f-4dfa-9452-f944ecec4442"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[06-A3: Desagregado de Herramientas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="74" width="275" height="12" uuid="7081d98e-aa40-42cf-b1e3-76577b5a7332"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[FIRMA Y SELLO - SUPERVISOR (RESPONSABLE DE LA ELABORACION)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="263" y="74" width="275" height="1" uuid="3a84d203-14f2-4d6f-9eb3-e29bc77678b0"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
